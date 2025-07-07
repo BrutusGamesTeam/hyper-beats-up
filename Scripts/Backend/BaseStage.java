@@ -64,7 +64,7 @@ public class BaseStage extends Component
      */
     public void addCharacter(BaseCharacter character)
     {
-        if(this.characters.size() > MAX_CHARACTERS) throw(new RuntimeException("O personagem a ser adicionado ultrapassa do limite de personagens simultâneos."));
+        if(this.characters.size() > MAX_CHARACTERS) throw(new IllegalArgumentException("O personagem a ser adicionado ultrapassa do limite de personagens simultâneos."));
         if(character == null) throw(new IllegalArgumentException("O personagem a ser adicionado não pode em hipótese alguma ser nulo."));
         if(this.characters.contains(character)) return;
         
@@ -84,7 +84,7 @@ public class BaseStage extends Component
      * Este método serve apenas para facilitar o uso do console.
      * </p>
      * 
-     * @param message A mensagem de saída do registro.
+     * @param message A mensagem de saída do registro (utilizando um "{@code java.lang.Object}".
      */
     public void log(Object message)
     {
@@ -105,7 +105,9 @@ public class BaseStage extends Component
     /**
      * Execute as tarefas uma única vez após o primeiro quadro.
      * 
+     * <p>
      * Aviso: este método é automáticamente convocado, não chame-o manualmente.
+     * </p>
      */
     @Override
     public void start()
