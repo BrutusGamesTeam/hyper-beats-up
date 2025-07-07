@@ -48,12 +48,23 @@ public class BaseCharacter extends Component
     private final String characterID;
     
     // Construtores públicos.
-    
+
+    /**
+     * Crie uma nova instância de personagem básico com campos definidos {@code this.characterID = "base-character"; this.setDisplayName("Base Character");}.
+     */
     public BaseCharacter()
     {
         this("base-character", "Base Character");
     }
-    
+
+    /**
+     * Crie uma nova instância composta por <b>ID</b> de personagem e <b>nome de exibição</b>.
+     * 
+     * @param characterID O ID de personagem solicitado para a criação.
+     * @param characterID O nome de exibição do personagem a ser criado.
+     * 
+     * @throws IllegalArgumentException caso haja um nome de exibição ou ID de personagem inválidos.
+     */
     public BaseCharacter(String characterID, String displayName)
     {
         if(characterID == null) throw(new IllegalArgumentException("O ID de personagem não deve ser inicializado como nulo."));
